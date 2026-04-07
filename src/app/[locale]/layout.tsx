@@ -3,6 +3,8 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import Navigation from '@/components/layout/Navigation'
+import CircuitBackground from '@/components/layout/CircuitBackground'
+import PageTransition from '@/components/layout/PageTransition'
 import '../globals.css'
 
 const locales = ['zh', 'en'] as const
@@ -51,8 +53,13 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body className="bg-persona-dark min-h-screen">
         <NextIntlClientProvider messages={messages}>
+          <CircuitBackground />
           <Navigation currentLocale={locale} />
-          <main className="pt-14 relative z-10">{children}</main>
+          <main className="pt-14 relative z-10">
+            <PageTransition>
+              {children}
+            </PageTransition>
+          </main>
         </NextIntlClientProvider>
       </body>
     </html>
