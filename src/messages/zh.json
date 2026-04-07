@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "home": "首页",
+    "resume": "简历",
+    "projects": "项目",
+    "portfolio": "作品集",
+    "contact": "联系我"
+  },
+  "home": {
+    "title": "你好，我是 Guoli",
+    "subtitle": "AI训练师 · 数据标注专家 · 内容创作者",
+    "cta": "探索我的世界",
+    "npcLine": "慢慢来…… 不急的"
+  },
+  "resume": {
+    "title": "我的战绩",
+    "download": "下载简历 PDF",
+    "skills": "核心技能",
+    "experience": "工作经历",
+    "education": "教育背景",
+    "npcLine": "♩♪ 让我来介绍主人的高光时刻！"
+  },
+  "projects": {
+    "title": "任务模式",
+    "subtitle": "执行过的任务清单",
+    "npcLine": "哼，这个项目还行吧"
+  },
+  "portfolio": {
+    "title": "创作空间",
+    "subtitle": "AI 生成作品展示",
+    "npcLine": "这个好看吧？我觉得好看……"
+  },
+  "contact": {
+    "title": "发送信息",
+    "email": "邮箱",
+    "wechat": "微信",
+    "copy": "复制",
+    "copied": "已复制！",
+    "npcLine": "我们都在等你联系我的主人哦"
+  },
+  "common": {
+    "loading": "加载中",
+    "switchLang": "English"
+  }
+}

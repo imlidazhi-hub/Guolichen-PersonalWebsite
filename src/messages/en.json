@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "home": "Home",
+    "resume": "Resume",
+    "projects": "Projects",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Hi, I'm Guoli",
+    "subtitle": "AI Trainer · Data Annotation Expert · Content Creator",
+    "cta": "Explore My World",
+    "npcLine": "Take your time... no rush"
+  },
+  "resume": {
+    "title": "My Achievements",
+    "download": "Download Resume PDF",
+    "skills": "Core Skills",
+    "experience": "Work Experience",
+    "education": "Education",
+    "npcLine": "♩♪ Let me introduce the highlights!"
+  },
+  "projects": {
+    "title": "Mission Mode",
+    "subtitle": "Completed Mission Log",
+    "npcLine": "Hmph, this project is... acceptable"
+  },
+  "portfolio": {
+    "title": "Creative Space",
+    "subtitle": "AI Generated Works",
+    "npcLine": "This looks nice, right? I think so..."
+  },
+  "contact": {
+    "title": "Send Message",
+    "email": "Email",
+    "wechat": "WeChat",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "npcLine": "We're all waiting for you to reach out!"
+  },
+  "common": {
+    "loading": "Loading",
+    "switchLang": "中文"
+  }
+}
