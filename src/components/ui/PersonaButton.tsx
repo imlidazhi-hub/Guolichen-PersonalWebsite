@@ -39,6 +39,7 @@ export default function PersonaButton({
 
   return (
     <motion.button
+      type="button"
       onClick={onClick}
       className={cls}
       whileHover={{ scale: 1.05 }}

@@ -1,5 +1,6 @@
 'use client'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useEffect } from 'react'
 import TypewriterText from './TypewriterText'
 
 interface NPCDialogProps {
@@ -10,10 +11,21 @@ interface NPCDialogProps {
 }
 
 export default function NPCDialog({ isOpen, text, npcName, onClose }: NPCDialogProps) {
+  useEffect(() => {
+    if (!isOpen) return
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose()
+    }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [isOpen, onClose])
+
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
+          role="dialog"
+          aria-label={npcName}
           className="absolute z-20 bottom-full mb-2 left-1/2 -translate-x-1/2 min-w-48 max-w-64"
           initial={{ opacity: 0, y: 10, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
