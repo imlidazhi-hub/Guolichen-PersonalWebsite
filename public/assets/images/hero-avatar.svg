@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 384" width="320" height="384">
+  <defs>
+    <clipPath id="hero-clip">
+      <polygon points="16,0 320,0 304,384 0,384"/>
+    </clipPath>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1A1A2E"/>
+      <stop offset="100%" style="stop-color:#2d1b4e"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="384" fill="url(#bg-grad)"/>
+  <!-- Purple gradient overlay -->
+  <rect width="320" height="384" fill="#6B21A8" opacity="0.2" clip-path="url(#hero-clip)"/>
+  <!-- Gold accent lines -->
+  <line x1="16" y1="0" x2="16" y2="384" stroke="#FFD900" stroke-width="2" opacity="0.6"/>
+  <rect x="0" y="0" width="320" height="3" fill="#FFD900"/>
+  <!-- Character silhouette area -->
+  <ellipse cx="160" cy="130" rx="55" ry="55" fill="#FFD900" opacity="0.15"/>
+  <ellipse cx="160" cy="130" rx="50" ry="50" fill="#FFD900" opacity="0.1"/>
+  <text x="160" y="145" text-anchor="middle" font-size="72" opacity="0.6">👤</text>
+  <!-- Decorative circuit lines -->
+  <line x1="60" y1="240" x2="260" y2="240" stroke="#00CED1" stroke-width="1" opacity="0.4"/>
+  <line x1="80" y1="260" x2="240" y2="260" stroke="#00CED1" stroke-width="1" opacity="0.3"/>
+  <circle cx="60" cy="240" r="3" fill="#FFD900" opacity="0.6"/>
+  <circle cx="260" cy="240" r="3" fill="#FFD900" opacity="0.6"/>
+  <!-- Name area -->
+  <rect x="30" y="290" width="260" height="50" fill="#FFD900" opacity="0.9" clip-path="url(#hero-clip)"/>
+  <text x="160" y="310" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="bold" fill="#1A1A2E" font-family="Arial">AI 训练师 · 数据标注</text>
+  <text x="160" y="330" text-anchor="middle" dominant-baseline="middle" font-size="12" fill="#1A1A2E" font-family="Arial">AI Trainer · Data Annotation</text>
+  <!-- Corner decorations -->
+  <polygon points="280,0 320,0 320,40" fill="#6B21A8" opacity="0.8"/>
+  <polygon points="0,344 0,384 40,384" fill="#FFD900" opacity="0.4"/>
+  <!-- Pending label -->
+  <rect x="60" y="355" width="200" height="20" fill="#6B21A8" opacity="0.6"/>
+  <text x="160" y="369" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="#FFD900" font-family="Arial" font-style="italic">[ AI 形象待生成 ]</text>
+</svg>

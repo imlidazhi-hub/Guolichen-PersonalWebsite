@@ -13,7 +13,7 @@ export default function NPCXiaoke({ locale, size = 100, className }: NPCXiaokePr
   return (
     <NPCBase
       name={locale === 'zh' ? '小可' : 'Xiaoke'}
-      imageSrc="/assets/npc/xiaoke.png"
+      imageSrc="/assets/npc/xiaoke.svg"
       imageAlt={locale === 'zh' ? '小可 - 项目页NPC' : 'Xiaoke - Projects page NPC'}
       lines={lines}
       size={size}

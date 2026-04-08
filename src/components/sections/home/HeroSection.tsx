@@ -68,7 +68,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/assets/images/hero-avatar.png"
+              src="/assets/images/hero-avatar.svg"
               alt={locale === 'zh' ? '个人卡通形象' : 'Personal avatar'}
               className="w-full h-full object-cover"
               onError={(e) => { e.currentTarget.style.display = 'none' }}

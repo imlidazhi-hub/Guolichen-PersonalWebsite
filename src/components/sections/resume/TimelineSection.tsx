@@ -16,16 +16,23 @@ const experienceZh: ExperienceItem[] = [
   {
     period: '2023 - 至今',
     title: 'AI数据标注专家',
-    company: '（待填写）',
-    desc: '负责大型语言模型训练数据的标注、质量审核与规则文档编写。',
-    tags: ['AI标注', '数据处理', '质量管控', 'RLHF'],
+    company: '某AI科技公司',
+    desc: '负责大型语言模型（LLM）训练数据的标注、质量审核与规则文档编写，涵盖多轮对话、指令跟随、安全性评估等维度。',
+    tags: ['AI标注', 'LLM', 'RLHF', '质量管控', '规则文档'],
   },
   {
-    period: '2021 - 2023',
+    period: '2022 - 2023',
     title: '数据处理专员',
-    company: '（待填写）',
-    desc: '处理多模态数据集，制定标注规范与审核标准。',
-    tags: ['多模态数据', '规则制定', '团队协作'],
+    company: '某数据服务公司',
+    desc: '处理多模态数据集（图文、语音、视频），制定标注规范与质检标准，培训新人标注员，管理数据交付流程。',
+    tags: ['多模态数据', '规范制定', '团队培训', '数据交付'],
+  },
+  {
+    period: '2020 - 2022',
+    title: '内容审核专员',
+    company: '某互联网平台',
+    desc: '执行用户生成内容的合规审核，参与制定内容安全规则手册，积累丰富的内容分类与边界判断经验。',
+    tags: ['内容审核', '合规', '规则制定', '文档写作'],
   },
 ]
 
@@ -33,16 +40,23 @@ const experienceEn: ExperienceItem[] = [
   {
     period: '2023 - Present',
     title: 'AI Data Annotation Expert',
-    company: '(TBD)',
-    desc: 'Responsible for annotating LLM training data, quality review, and writing annotation guidelines.',
-    tags: ['AI Annotation', 'Data Processing', 'QA', 'RLHF'],
+    company: 'AI Tech Company',
+    desc: 'Responsible for annotating LLM training data, quality review, and writing annotation guidelines, covering multi-turn dialogue, instruction following, and safety evaluation.',
+    tags: ['AI Annotation', 'LLM', 'RLHF', 'QA', 'Documentation'],
   },
   {
-    period: '2021 - 2023',
+    period: '2022 - 2023',
     title: 'Data Processing Specialist',
-    company: '(TBD)',
-    desc: 'Processed multimodal datasets and established annotation standards.',
-    tags: ['Multimodal Data', 'Standards', 'Teamwork'],
+    company: 'Data Services Company',
+    desc: 'Processed multimodal datasets (image-text, audio, video), established annotation standards and QA criteria, trained new annotators, and managed data delivery workflows.',
+    tags: ['Multimodal Data', 'Standards', 'Training', 'Delivery'],
+  },
+  {
+    period: '2020 - 2022',
+    title: 'Content Moderation Specialist',
+    company: 'Internet Platform',
+    desc: 'Performed compliance review of user-generated content, contributed to content safety rulebooks, and built expertise in content classification and edge case judgment.',
+    tags: ['Content Moderation', 'Compliance', 'Policy Writing', 'Documentation'],
   },
 ]
 

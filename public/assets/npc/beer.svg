@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <clipPath id="persona-clip4">
+      <polygon points="20,0 200,0 180,200 0,200"/>
+    </clipPath>
+  </defs>
+  <rect width="200" height="200" fill="#1A1A2E"/>
+  <rect width="200" height="200" fill="#166534" opacity="0.3" clip-path="url(#persona-clip4)"/>
+  <rect x="0" y="0" width="200" height="4" fill="#FFD900"/>
+  <text x="100" y="100" text-anchor="middle" dominant-baseline="middle" font-size="64">🦜</text>
+  <rect x="20" y="148" width="160" height="32" fill="#FFD900" clip-path="url(#persona-clip4)"/>
+  <text x="100" y="168" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="bold" fill="#1A1A2E" font-family="Arial">小啤酒 Beer</text>
+  <polygon points="160,0 200,0 200,40" fill="#166534" opacity="0.8"/>
+</svg>

@@ -8,9 +8,9 @@ import ContactInfo from '@/components/sections/contact/ContactInfo'
 
 // Replace with real contact info before deploying
 const CONTACT = {
-  email: 'your-email@example.com',
-  wechat: 'your-wechat-id',
-  github: 'https://github.com/yourusername',
+  email: 'guoli.ai.work@gmail.com',
+  wechat: 'guoli_ai_trainer',
+  github: 'https://github.com/guolichen',
 }
 
 export default async function ContactPage({

@@ -13,7 +13,7 @@ export default function NPCBeer({ locale, size = 100, className }: NPCBeerProps)
   return (
     <NPCBase
       name={locale === 'zh' ? '小啤酒' : 'Beer'}
-      imageSrc="/assets/npc/beer.png"
+      imageSrc="/assets/npc/beer.svg"
       imageAlt={locale === 'zh' ? '小啤酒 - 作品集页NPC' : 'Beer - Portfolio page NPC'}
       lines={lines}
       size={size}

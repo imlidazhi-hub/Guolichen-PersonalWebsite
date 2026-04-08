@@ -13,7 +13,7 @@ export default function NPCDuoduo({ locale, size = 100, className }: NPCDuoduoPr
   return (
     <NPCBase
       name={locale === 'zh' ? '角多多' : 'Duoduo'}
-      imageSrc="/assets/npc/duoduo.png"
+      imageSrc="/assets/npc/duoduo.svg"
       imageAlt={locale === 'zh' ? '角多多 - 简历页NPC' : 'Duoduo - Resume page NPC'}
       lines={lines}
       size={size}

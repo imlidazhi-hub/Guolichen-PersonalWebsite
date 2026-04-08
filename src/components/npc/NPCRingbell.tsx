@@ -13,7 +13,7 @@ export default function NPCRingbell({ locale, size = 100, className }: NPCRingbe
   return (
     <NPCBase
       name={locale === 'zh' ? '铃布' : 'Ringbell'}
-      imageSrc="/assets/npc/ringbell.png"
+      imageSrc="/assets/npc/ringbell.svg"
       imageAlt={locale === 'zh' ? '铃布 - 首页导航NPC' : 'Ringbell - Home page NPC'}
       lines={lines}
       size={size}
