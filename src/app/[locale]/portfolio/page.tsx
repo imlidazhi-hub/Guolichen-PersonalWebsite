@@ -35,7 +35,7 @@ export default async function PortfolioPage({
         <NPCBeer locale={locale} size={90} />
       </div>
 
-      <Gallery items={portfolioItems} />
+      <Gallery items={portfolioItems} locale={locale} />
     </div>
   )
 }

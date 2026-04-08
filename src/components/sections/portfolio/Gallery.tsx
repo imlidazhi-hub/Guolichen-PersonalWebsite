@@ -6,16 +6,19 @@ import { cardHoverVariants } from '@/lib/animations'
 
 interface GalleryProps {
   items: GalleryItem[]
+  locale?: string
 }
 
-export default function Gallery({ items }: GalleryProps) {
+export default function Gallery({ items, locale = 'zh' }: GalleryProps) {
   const [selected, setSelected] = useState<GalleryItem | null>(null)
 
   if (items.length === 0) {
     return (
       <div className="text-center py-20 text-white/30">
         <div className="text-5xl mb-4">◇</div>
-        <p className="text-sm">作品上传中，敬请期待… / Coming soon</p>
+        <p className="text-sm">
+          {locale === 'zh' ? '作品上传中，敬请期待…' : 'Coming soon — works being uploaded'}
+        </p>
       </div>
     )
   }

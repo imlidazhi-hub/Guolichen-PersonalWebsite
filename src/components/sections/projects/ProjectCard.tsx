@@ -10,7 +10,7 @@ export interface Project {
   result?: string
 }
 
-export default function ProjectCard({ project }: { project: Project }) {
+export default function ProjectCard({ project, locale = 'zh' }: { project: Project; locale?: string }) {
   return (
     <motion.div
       className="bg-persona-purple/10 border border-persona-purple/40 p-5 relative overflow-hidden"
@@ -53,8 +53,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           rel="noopener noreferrer"
           className="text-xs text-cyber-teal hover:text-persona-gold transition-colors underline"
         >
-          {/* Link text handled by locale — keep generic */}
-          View →
+          {locale === 'zh' ? '查看详情 →' : 'View details →'}
         </a>
       )}
     </motion.div>

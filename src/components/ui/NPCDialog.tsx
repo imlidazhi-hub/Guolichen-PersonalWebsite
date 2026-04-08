@@ -25,6 +25,7 @@ export default function NPCDialog({ isOpen, text, npcName, onClose }: NPCDialogP
       {isOpen && (
         <motion.div
           role="dialog"
+          aria-modal="true"
           aria-label={npcName}
           className="absolute z-20 bottom-full mb-2 left-1/2 -translate-x-1/2 min-w-48 max-w-64"
           initial={{ opacity: 0, y: 10, scale: 0.9 }}
@@ -38,6 +39,7 @@ export default function NPCDialog({ isOpen, text, npcName, onClose }: NPCDialogP
               {npcName}
             </div>
             <TypewriterText
+              key={text}
               text={text}
               className="text-white text-xs leading-relaxed"
             />

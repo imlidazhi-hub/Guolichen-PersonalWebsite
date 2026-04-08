@@ -50,7 +50,11 @@ export default function NPCBase({
         variants={npcIdleVariants}
         animate="idle"
         onClick={handleClick}
-        className="cursor-pointer"
+        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleClick() } }}
+        role="button"
+        tabIndex={0}
+        aria-label={name}
+        className="cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-persona-gold"
         style={{ width: size, height: size }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}

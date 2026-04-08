@@ -60,6 +60,26 @@ const experienceEn: ExperienceItem[] = [
   },
 ]
 
+const educationZh = [
+  {
+    period: '2017 - 2021',
+    title: '本科学历',
+    company: '（待填写院校名称）',
+    desc: '完成本科学业，培养了系统性思维与文档写作能力。',
+    tags: ['本科', '学士学位'],
+  },
+]
+
+const educationEn = [
+  {
+    period: '2017 - 2021',
+    title: "Bachelor's Degree",
+    company: '(University name TBD)',
+    desc: "Completed undergraduate studies, developing systematic thinking and documentation skills.",
+    tags: ["Bachelor's", 'University'],
+  },
+]
+
 export default function TimelineSection({ locale }: { locale: string }) {
   const t = useTranslations('resume')
   const experience = locale === 'zh' ? experienceZh : experienceEn
@@ -103,6 +123,44 @@ export default function TimelineSection({ locale }: { locale: string }) {
             </ClipCard>
           </motion.div>
         ))}
+      </div>
+      {/* Education section */}
+      <div className="mt-8">
+        <h3 className="text-persona-gold font-black text-xl mb-6 flex items-center gap-3">
+          <span className="w-8 h-0.5 bg-persona-gold inline-block" />
+          {t('education')}
+        </h3>
+        <div className="space-y-4">
+          {(locale === 'zh' ? educationZh : educationEn).map((item, i) => (
+            <motion.div
+              key={i}
+              variants={slideInFromLeft}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-50px' }}
+            >
+              <ClipCard>
+                <div className="flex flex-wrap justify-between items-start gap-2 mb-2">
+                  <div>
+                    <h4 className="text-white font-bold">{item.title}</h4>
+                    <p className="text-white/60 text-sm">{item.company}</p>
+                  </div>
+                  <span className="clip-persona bg-persona-gold/10 text-persona-gold text-xs font-mono px-2 py-1 whitespace-nowrap">
+                    {item.period}
+                  </span>
+                </div>
+                <p className="text-white/80 text-sm mb-3">{item.desc}</p>
+                <div className="flex flex-wrap gap-2">
+                  {item.tags.map((tag) => (
+                    <span key={tag} className="clip-persona bg-cyber-teal/10 text-cyber-teal text-xs px-2 py-0.5 border border-cyber-teal/30">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </ClipCard>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   )
