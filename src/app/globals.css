@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-persona-gold: #FFD900;
+  --color-persona-purple: #6B21A8;
+  --color-persona-dark: #1A1A2E;
+  --color-cyber-teal: #00CED1;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #1A1A2E;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Persona clip-path utilities */
+.clip-persona {
+  clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
+}
+
+.clip-persona-lg {
+  clip-path: polygon(24px 0, 100% 0, calc(100% - 24px) 100%, 0 100%);
+}
+
+/* Glow effects */
+.glow-gold {
+  text-shadow: 0 0 10px #FFD900, 0 0 20px #FFD900;
+}
+
+.border-glow-gold {
+  border: 1px solid #FFD900;
+  box-shadow: 0 0 8px rgba(255, 217, 0, 0.5), inset 0 0 8px rgba(255, 217, 0, 0.1);
+}
