@@ -58,6 +58,32 @@ body {
   box-shadow: 0 0 8px rgba(10, 239, 255, 0.5), inset 0 0 8px rgba(10, 239, 255, 0.1);
 }
 
+/* Electric current hover animation */
+@keyframes electric-glow {
+  0%   { box-shadow: 0 0 6px #0AEFFF, 0 0 14px #0AEFFF, 0 0 2px #fff; }
+  15%  { box-shadow: 0 0 10px #FF2D78, 0 0 20px #FF2D78, 0 0 4px #fff; }
+  30%  { box-shadow: 0 0 4px #0AEFFF, 0 0 22px #0AEFFF, 0 0 6px #fff; }
+  45%  { box-shadow: 0 0 12px #FF2D78, 0 0 18px #FF2D78; }
+  60%  { box-shadow: 0 0 8px #0AEFFF, 0 0 16px #0AEFFF, 0 0 3px #fff; }
+  75%  { box-shadow: 0 0 6px #FF2D78, 0 0 24px #FF2D78, 0 0 2px #fff; }
+  90%  { box-shadow: 0 0 10px #0AEFFF, 0 0 12px #0AEFFF; }
+  100% { box-shadow: 0 0 6px #0AEFFF, 0 0 14px #0AEFFF, 0 0 2px #fff; }
+}
+
+@keyframes electric-text-glow {
+  0%, 100% { text-shadow: 0 0 6px #0AEFFF, 0 0 12px #0AEFFF; }
+  50%       { text-shadow: 0 0 8px #FF2D78, 0 0 16px #FF2D78, 0 0 2px #fff; }
+}
+
+.cyber-electric:hover {
+  animation: electric-glow 0.18s linear infinite;
+}
+
+.cyber-electric:hover span,
+.cyber-electric:hover * {
+  animation: electric-text-glow 0.18s linear infinite;
+}
+
 /* Scanline overlay effect */
 .scanlines::after {
   content: '';

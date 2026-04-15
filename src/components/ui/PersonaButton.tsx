@@ -1,5 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
+import { electricHoverVariants } from '@/lib/animations'
 
 interface PersonaButtonProps {
   children: React.ReactNode
@@ -10,8 +11,8 @@ interface PersonaButtonProps {
 }
 
 const variantStyles = {
-  gold: 'bg-persona-gold text-persona-dark hover:brightness-110',
-  purple: 'bg-persona-purple text-white hover:brightness-110',
+  gold: 'bg-persona-gold text-persona-dark',
+  purple: 'bg-persona-purple text-white',
   teal: 'border border-cyber-teal text-cyber-teal hover:bg-cyber-teal/20',
 }
 
@@ -22,15 +23,17 @@ export default function PersonaButton({
   variant = 'gold',
   className = '',
 }: PersonaButtonProps) {
-  const cls = `clip-persona px-6 py-2.5 font-black text-sm tracking-wider transition-all ${variantStyles[variant]} ${className}`
+  const cls = `cyber-electric clip-persona pl-7 pr-6 py-2.5 font-black text-sm tracking-wider transition-colors ${variantStyles[variant]} ${className}`
 
   if (href) {
     return (
       <motion.a
         href={href}
         className={cls}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
+        variants={electricHoverVariants}
+        initial="rest"
+        whileHover="hover"
+        whileTap={{ scale: 0.95, x: 0 }}
       >
         {children}
       </motion.a>
@@ -42,8 +45,10 @@ export default function PersonaButton({
       type="button"
       onClick={onClick}
       className={cls}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+      variants={electricHoverVariants}
+      initial="rest"
+      whileHover="hover"
+      whileTap={{ scale: 0.95, x: 0 }}
     >
       {children}
     </motion.button>

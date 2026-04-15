@@ -4,6 +4,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import { useTranslations } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
+import { electricHoverVariants } from '@/lib/animations'
 
 interface NavigationProps {
   currentLocale: string
@@ -42,13 +43,15 @@ export default function Navigation({ currentLocale }: NavigationProps) {
     return (
       <Link href={href} onClick={() => setMobileOpen(false)}>
         <motion.div
-          className={`clip-persona pl-6 pr-5 py-2 text-sm font-bold transition-colors cursor-pointer ${
+          className={`cyber-electric clip-persona pl-6 pr-5 py-2 text-sm font-bold transition-colors cursor-pointer ${
             isActive
               ? 'bg-persona-gold text-persona-dark'
-              : 'bg-persona-purple/30 text-white hover:bg-persona-purple/60'
+              : 'bg-persona-purple/30 text-white'
           }`}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          variants={electricHoverVariants}
+          initial="rest"
+          whileHover="hover"
+          whileTap={{ scale: 0.95, x: 0 }}
         >
           {t(k)}
         </motion.div>
@@ -78,9 +81,11 @@ export default function Navigation({ currentLocale }: NavigationProps) {
         {/* Language switch */}
         <motion.button
           onClick={switchLocale}
-          className="clip-persona px-3 py-1.5 text-xs font-bold border border-cyber-teal text-cyber-teal hover:bg-cyber-teal/20 transition-colors"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          className="cyber-electric clip-persona px-4 py-1.5 text-xs font-bold border border-cyber-teal text-cyber-teal transition-colors"
+          variants={electricHoverVariants}
+          initial="rest"
+          whileHover="hover"
+          whileTap={{ scale: 0.95, x: 0 }}
         >
           {tCommon('switchLang')}
         </motion.button>

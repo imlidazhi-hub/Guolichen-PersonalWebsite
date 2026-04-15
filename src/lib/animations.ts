@@ -60,6 +60,31 @@ export const cardHoverVariants: Variants = {
   },
 }
 
+// Electric jitter: micro horizontal shake simulating current vibration
+export const electricHoverVariants: Variants = {
+  rest: { x: 0, scale: 1 },
+  hover: {
+    x: [0, -1.5, 1.5, -1, 1, 0],
+    scale: 1.05,
+    transition: {
+      x: { duration: 0.25, repeat: Infinity, repeatType: 'loop', ease: 'linear' },
+      scale: { duration: 0.1 },
+    },
+  },
+}
+
+export const electricCardVariants: Variants = {
+  rest: { scale: 1, x: 0 },
+  hover: {
+    scale: 1.02,
+    x: [0, -1, 1, -0.5, 0.5, 0],
+    transition: {
+      x: { duration: 0.3, repeat: Infinity, repeatType: 'loop', ease: 'linear' },
+      scale: { duration: 0.15 },
+    },
+  },
+}
+
 export const typewriterContainer: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.05 } },
