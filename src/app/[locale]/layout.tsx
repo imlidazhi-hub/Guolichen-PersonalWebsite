@@ -6,6 +6,7 @@ import { Orbitron, Noto_Sans_SC, Share_Tech_Mono } from 'next/font/google'
 import Navigation from '@/components/layout/Navigation'
 import CircuitBackground from '@/components/layout/CircuitBackground'
 import PageTransition from '@/components/layout/PageTransition'
+import IntroScreen from '@/components/layout/IntroScreen'
 import '../globals.css'
 
 const orbitron = Orbitron({
@@ -75,6 +76,7 @@ export default async function LocaleLayout({
     <html lang={locale} className={`${orbitron.variable} ${notoSansSC.variable} ${shareTechMono.variable}`}>
       <body className="bg-persona-dark min-h-screen">
         <NextIntlClientProvider messages={messages}>
+          <IntroScreen />
           <CircuitBackground />
           <Navigation currentLocale={locale} />
           <main className="pt-14 relative z-10">
