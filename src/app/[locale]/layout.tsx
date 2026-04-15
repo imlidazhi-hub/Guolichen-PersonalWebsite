@@ -7,6 +7,7 @@ import Navigation from '@/components/layout/Navigation'
 import CircuitBackground from '@/components/layout/CircuitBackground'
 import PageTransition from '@/components/layout/PageTransition'
 import IntroScreen from '@/components/layout/IntroScreen'
+import MouseFollower from '@/components/layout/MouseFollower'
 import '../globals.css'
 
 const orbitron = Orbitron({
@@ -74,8 +75,9 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={`${orbitron.variable} ${notoSansSC.variable} ${shareTechMono.variable}`}>
-      <body className="bg-persona-dark min-h-screen">
+      <body className="bg-black min-h-screen">
         <NextIntlClientProvider messages={messages}>
+          <MouseFollower />
           <IntroScreen />
           <CircuitBackground />
           <Navigation currentLocale={locale} />

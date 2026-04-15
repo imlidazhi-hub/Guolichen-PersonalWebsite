@@ -3,7 +3,7 @@
 @theme inline {
   --color-persona-gold: #FFD900;
   --color-persona-purple: #6B21A8;
-  --color-persona-dark: #1A1A2E;
+  --color-persona-dark: #000000;
   --color-cyber-teal: #00CED1;
   --color-cyber-pink: #FF2D78;
   --color-cyber-blue: #0AEFFF;
@@ -19,7 +19,7 @@
 }
 
 body {
-  background-color: #1A1A2E;
+  background-color: #000000;
   color: #ffffff;
   overflow-x: hidden;
   font-family: var(--font-noto-sc), system-ui, sans-serif;
