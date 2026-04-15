@@ -43,17 +43,20 @@ export default function Navigation({ currentLocale }: NavigationProps) {
     return (
       <Link href={href} onClick={() => setMobileOpen(false)}>
         <motion.div
-          className={`cyber-electric clip-persona pl-6 pr-5 py-2 text-sm font-bold transition-colors cursor-pointer ${
+          className={`cyber-electric relative px-5 py-2 text-sm font-bold cursor-pointer ${
             isActive
               ? 'bg-persona-gold text-persona-dark'
               : 'bg-persona-purple/30 text-white'
           }`}
+          style={{ skewX: -8 } as React.CSSProperties}
           variants={electricHoverVariants}
           initial="rest"
           whileHover="hover"
           whileTap={{ scale: 0.95, x: 0 }}
         >
-          {t(k)}
+          <span style={{ display: 'inline-block', transform: 'skewX(8deg)' }}>
+            {t(k)}
+          </span>
         </motion.div>
       </Link>
     )
@@ -81,13 +84,16 @@ export default function Navigation({ currentLocale }: NavigationProps) {
         {/* Language switch */}
         <motion.button
           onClick={switchLocale}
-          className="cyber-electric clip-persona px-4 py-1.5 text-xs font-bold border border-cyber-teal text-cyber-teal transition-colors"
+          className="cyber-electric relative px-4 py-1.5 text-xs font-bold border border-cyber-teal text-cyber-teal transition-colors"
+          style={{ skewX: -8 } as React.CSSProperties}
           variants={electricHoverVariants}
           initial="rest"
           whileHover="hover"
           whileTap={{ scale: 0.95, x: 0 }}
         >
-          {tCommon('switchLang')}
+          <span style={{ display: 'inline-block', transform: 'skewX(8deg)' }}>
+            {tCommon('switchLang')}
+          </span>
         </motion.button>
       </div>
 
