@@ -34,13 +34,13 @@ export default function GlitchText({ text, className = '', autoPlay = true }: Gl
         animate={controls}
         initial="idle"
         className="relative z-10 text-persona-gold font-black"
-        style={{ textShadow: '0 0 10px #FFD900' }}
+        style={{ textShadow: '0 0 12px #FFD900, 0 0 24px rgba(255,217,0,0.4)', fontFamily: 'var(--font-noto-sc), var(--font-orbitron), sans-serif' }}
       >
         {text}
       </motion.span>
       <span
-        className="absolute inset-0 text-cyber-teal font-black opacity-40"
-        style={{ transform: 'translate(2px, 2px)', userSelect: 'none' }}
+        className="absolute inset-0 text-cyber-pink font-black opacity-30"
+        style={{ transform: 'translate(3px, 1px)', userSelect: 'none', fontFamily: 'var(--font-noto-sc), var(--font-orbitron), sans-serif' }}
         aria-hidden="true"
       >
         {text}

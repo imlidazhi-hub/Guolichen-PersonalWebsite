@@ -7,6 +7,9 @@
   --color-cyber-teal: #00CED1;
   --color-cyber-pink: #FF2D78;
   --color-cyber-blue: #0AEFFF;
+  --font-cyber: var(--font-orbitron), sans-serif;
+  --font-zh: var(--font-noto-sc), system-ui, sans-serif;
+  --font-mono-cyber: var(--font-share-tech), monospace;
 }
 
 * {
@@ -19,6 +22,22 @@ body {
   background-color: #1A1A2E;
   color: #ffffff;
   overflow-x: hidden;
+  font-family: var(--font-noto-sc), system-ui, sans-serif;
+}
+
+/* Section divider */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #6B21A8, #FF2D78, #0AEFFF, #6B21A8, transparent);
+  margin: 0;
+}
+
+/* Cyber label badge */
+.cyber-label {
+  font-family: var(--font-share-tech), monospace;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
 }
 
 /* Persona clip-path utilities */

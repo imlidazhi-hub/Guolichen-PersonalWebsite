@@ -23,7 +23,7 @@ export default function PersonaButton({
   variant = 'gold',
   className = '',
 }: PersonaButtonProps) {
-  const cls = `cyber-electric clip-persona pl-7 pr-6 py-2.5 font-black text-sm tracking-wider transition-colors ${variantStyles[variant]} ${className}`
+  const cls = `cyber-electric clip-persona pl-7 pr-6 py-2.5 font-black text-sm tracking-widest transition-colors ${variantStyles[variant]} ${className}`
 
   if (href) {
     return (

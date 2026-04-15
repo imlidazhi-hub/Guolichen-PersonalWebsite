@@ -4,7 +4,6 @@ import { usePathname, useRouter } from 'next/navigation'
 import { useTranslations } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
-import { electricHoverVariants } from '@/lib/animations'
 
 interface NavigationProps {
   currentLocale: string
@@ -19,6 +18,15 @@ const navPaths: Record<NavKey, string> = {
   projects: '/projects',
   portfolio: '/portfolio',
   contact: '/contact',
+}
+
+// Icons per nav item
+const navIcons: Record<NavKey, string> = {
+  home: '⌂',
+  resume: '◈',
+  projects: '◆',
+  portfolio: '◉',
+  contact: '✉',
 }
 
 export default function Navigation({ currentLocale }: NavigationProps) {
@@ -43,65 +51,92 @@ export default function Navigation({ currentLocale }: NavigationProps) {
     return (
       <Link href={href} onClick={() => setMobileOpen(false)}>
         <motion.div
-          className={`cyber-electric relative px-5 py-2 text-sm font-bold cursor-pointer ${
+          className={`relative flex items-center gap-1.5 px-4 py-2 text-sm font-bold cursor-pointer select-none transition-colors ${
             isActive
-              ? 'bg-persona-gold text-persona-dark'
-              : 'bg-persona-purple/30 text-white'
+              ? 'text-persona-gold'
+              : 'text-white/70 hover:text-white'
           }`}
-          style={{ skewX: -8 } as React.CSSProperties}
-          variants={electricHoverVariants}
-          initial="rest"
-          whileHover="hover"
-          whileTap={{ scale: 0.95, x: 0 }}
+          whileHover={{ y: -1 }}
+          whileTap={{ scale: 0.95 }}
+          style={{ fontFamily: 'var(--font-noto-sc), sans-serif' }}
         >
-          <span style={{ display: 'inline-block', transform: 'skewX(8deg)' }}>
-            {t(k)}
+          <span className={`text-xs ${isActive ? 'text-persona-gold' : 'text-cyber-pink/70'}`}>
+            {navIcons[k]}
           </span>
+          <span>{t(k)}</span>
+          {/* Active indicator bar */}
+          <motion.span
+            className="absolute bottom-0 left-2 right-2 h-0.5 bg-persona-gold"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: isActive ? 1 : 0 }}
+            transition={{ duration: 0.2 }}
+          />
+          {/* Hover indicator */}
+          {!isActive && (
+            <motion.span
+              className="absolute bottom-0 left-2 right-2 h-0.5 bg-cyber-pink/60"
+              initial={{ scaleX: 0 }}
+              whileHover={{ scaleX: 1 }}
+              transition={{ duration: 0.15 }}
+            />
+          )}
         </motion.div>
       </Link>
     )
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-persona-dark/90 backdrop-blur-sm border-b border-persona-purple/30" style={{ boxShadow: '0 1px 0 rgba(255,45,120,0.3), 0 2px 12px rgba(10,239,255,0.08)' }}>
-      <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-14">
+    <nav
+      className="fixed top-0 left-0 right-0 z-50 bg-persona-dark/95 backdrop-blur-md"
+      style={{ borderBottom: '1px solid rgba(107,33,168,0.4)', boxShadow: '0 0 20px rgba(10,239,255,0.06), 0 1px 0 rgba(255,45,120,0.25)' }}
+    >
+      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+        {/* Logo / Brand */}
+        <Link href={`/${currentLocale}/`}>
+          <motion.div
+            className="flex items-center gap-2 cursor-pointer"
+            whileHover={{ x: 2 }}
+          >
+            <span className="text-cyber-pink text-lg font-black" style={{ fontFamily: 'var(--font-orbitron), sans-serif' }}>◈</span>
+            <span className="text-white font-black text-base tracking-wider" style={{ fontFamily: 'var(--font-noto-sc), sans-serif' }}>果粒尘</span>
+          </motion.div>
+        </Link>
+
         {/* Desktop nav */}
-        <div className="hidden md:flex gap-1">
+        <div className="hidden md:flex items-center gap-1">
           {navKeys.map((k) => (
             <NavLink key={k} k={k} />
           ))}
         </div>
 
-        {/* Mobile hamburger */}
-        <button
-          className="md:hidden text-persona-gold font-bold text-xl"
-          onClick={() => setMobileOpen((v) => !v)}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? '✕' : '☰'}
-        </button>
-
-        {/* Language switch */}
-        <motion.button
-          onClick={switchLocale}
-          className="cyber-electric relative px-4 py-1.5 text-xs font-bold border border-cyber-teal text-cyber-teal transition-colors"
-          style={{ skewX: -8 } as React.CSSProperties}
-          variants={electricHoverVariants}
-          initial="rest"
-          whileHover="hover"
-          whileTap={{ scale: 0.95, x: 0 }}
-        >
-          <span style={{ display: 'inline-block', transform: 'skewX(8deg)' }}>
+        <div className="flex items-center gap-3">
+          {/* Language switch */}
+          <motion.button
+            onClick={switchLocale}
+            className="px-3 py-1.5 text-xs font-bold border border-cyber-teal/60 text-cyber-teal hover:bg-cyber-teal/10 hover:border-cyber-teal transition-colors"
+            style={{ fontFamily: 'var(--font-share-tech), monospace', letterSpacing: '0.1em' }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             {tCommon('switchLang')}
-          </span>
-        </motion.button>
+          </motion.button>
+
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden text-persona-gold font-bold text-xl"
+            onClick={() => setMobileOpen((v) => !v)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? '✕' : '☰'}
+          </button>
+        </div>
       </div>
 
       {/* Mobile dropdown */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            className="md:hidden border-t border-persona-purple/30 bg-persona-dark/95 px-4 py-3 flex flex-col gap-2"
+            className="md:hidden border-t border-persona-purple/30 bg-persona-dark/98 px-4 py-4 flex flex-col gap-1"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}

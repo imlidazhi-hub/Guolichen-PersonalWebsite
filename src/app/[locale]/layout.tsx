@@ -2,10 +2,32 @@ import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
+import { Orbitron, Noto_Sans_SC, Share_Tech_Mono } from 'next/font/google'
 import Navigation from '@/components/layout/Navigation'
 import CircuitBackground from '@/components/layout/CircuitBackground'
 import PageTransition from '@/components/layout/PageTransition'
 import '../globals.css'
+
+const orbitron = Orbitron({
+  subsets: ['latin'],
+  weight: ['400', '600', '700', '900'],
+  variable: '--font-orbitron',
+  display: 'swap',
+})
+
+const notoSansSC = Noto_Sans_SC({
+  subsets: ['latin'],
+  weight: ['400', '500', '700', '900'],
+  variable: '--font-noto-sc',
+  display: 'swap',
+})
+
+const shareTechMono = Share_Tech_Mono({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-share-tech',
+  display: 'swap',
+})
 
 const locales = ['zh', 'en'] as const
 
@@ -50,7 +72,7 @@ export default async function LocaleLayout({
   const messages = await getMessages({ locale })
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={`${orbitron.variable} ${notoSansSC.variable} ${shareTechMono.variable}`}>
       <body className="bg-persona-dark min-h-screen">
         <NextIntlClientProvider messages={messages}>
           <CircuitBackground />
