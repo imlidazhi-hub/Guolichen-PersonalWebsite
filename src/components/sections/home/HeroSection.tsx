@@ -26,6 +26,13 @@ export default function HeroSection({ locale }: HeroSectionProps) {
         className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-persona-gold/5"
         style={{ clipPath: 'polygon(0 0, 100% 20%, 100% 100%, 0 100%)' }}
       />
+      {/* Cyber pink accent — top right corner glow */}
+      <div className="absolute top-0 right-0 w-72 h-72 bg-cyber-pink/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Cyber blue accent — bottom left glow */}
+      <div className="absolute bottom-0 left-0 w-96 h-64 bg-cyber-blue/8 rounded-full blur-3xl pointer-events-none" />
+      {/* Decorative corner lines */}
+      <div className="absolute top-8 right-8 w-24 h-24 border-t-2 border-r-2 border-cyber-pink/40 pointer-events-none" />
+      <div className="absolute bottom-8 left-8 w-24 h-24 border-b-2 border-l-2 border-cyber-blue/40 pointer-events-none" />
 
       <div className="relative z-10 max-w-5xl w-full mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left: text */}
@@ -35,7 +42,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
           initial="hidden"
           animate="visible"
         >
-          <div className="clip-persona bg-persona-purple/40 inline-block px-4 py-1 mb-4">
+          <div className="clip-persona bg-persona-purple/40 inline-block px-4 py-1 mb-4 border-l-2 border-cyber-pink">
             <span className="text-cyber-teal text-sm font-bold tracking-widest uppercase">
               AI Trainer · Data Annotation
             </span>
@@ -64,7 +71,10 @@ export default function HeroSection({ locale }: HeroSectionProps) {
           {/* Avatar placeholder */}
           <div
             className="w-64 h-72 md:w-80 md:h-96 border-2 border-persona-gold/40 flex items-center justify-center bg-persona-purple/10 relative overflow-hidden"
-            style={{ clipPath: 'polygon(16px 0, 100% 0, calc(100% - 16px) 100%, 0 100%)' }}
+            style={{
+              clipPath: 'polygon(16px 0, 100% 0, calc(100% - 16px) 100%, 0 100%)',
+              boxShadow: '0 0 30px rgba(255, 45, 120, 0.15), 0 0 60px rgba(10, 239, 255, 0.08)',
+            }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img

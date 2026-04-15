@@ -42,7 +42,7 @@ export default function Navigation({ currentLocale }: NavigationProps) {
     return (
       <Link href={href} onClick={() => setMobileOpen(false)}>
         <motion.div
-          className={`clip-persona px-4 py-2 text-sm font-bold transition-colors cursor-pointer ${
+          className={`clip-persona pl-6 pr-5 py-2 text-sm font-bold transition-colors cursor-pointer ${
             isActive
               ? 'bg-persona-gold text-persona-dark'
               : 'bg-persona-purple/30 text-white hover:bg-persona-purple/60'
@@ -57,7 +57,7 @@ export default function Navigation({ currentLocale }: NavigationProps) {
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-persona-dark/90 backdrop-blur-sm border-b border-persona-purple/30">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-persona-dark/90 backdrop-blur-sm border-b border-persona-purple/30" style={{ boxShadow: '0 1px 0 rgba(255,45,120,0.3), 0 2px 12px rgba(10,239,255,0.08)' }}>
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-14">
         {/* Desktop nav */}
         <div className="hidden md:flex gap-1">
