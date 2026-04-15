@@ -75,7 +75,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={`${orbitron.variable} ${notoSansSC.variable} ${shareTechMono.variable}`}>
-      <body className="bg-black min-h-screen">
+      <body className="bg-persona-dark min-h-screen">
         <NextIntlClientProvider messages={messages}>
           <MouseFollower />
           <IntroScreen />

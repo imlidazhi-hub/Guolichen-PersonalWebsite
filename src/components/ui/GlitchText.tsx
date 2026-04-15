@@ -39,7 +39,7 @@ export default function GlitchText({ text, className = '', autoPlay = true }: Gl
         {text}
       </motion.span>
       <span
-        className="absolute inset-0 text-cyber-pink font-black opacity-30"
+        className="absolute inset-0 text-cyber-teal font-black opacity-20"
         style={{ transform: 'translate(3px, 1px)', userSelect: 'none', fontFamily: 'var(--font-noto-sc), var(--font-orbitron), sans-serif' }}
         aria-hidden="true"
       >

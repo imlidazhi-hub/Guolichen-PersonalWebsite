@@ -1,12 +1,19 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-persona-gold: #FFD900;
-  --color-persona-purple: #6B21A8;
-  --color-persona-dark: #000000;
-  --color-cyber-teal: #00CED1;
-  --color-cyber-pink: #FF2D78;
-  --color-cyber-blue: #0AEFFF;
+  /* ── Premium Cyberpunk Palette ── */
+  /* Primary neon: electric mint — the ONE signature color */
+  --color-cyber-teal: #00F0C8;
+  /* Secondary: warm amber-gold — sparingly for numbers/highlights */
+  --color-persona-gold: #E8B84B;
+  /* Accent: soft violet — replaces garish hot pink */
+  --color-cyber-pink: #9D73F8;
+  /* Sky cyan — used only for subtle variety */
+  --color-cyber-blue: #38C8E8;
+  /* Backgrounds */
+  --color-persona-dark: #050508;
+  /* Surface panels — deep navy */
+  --color-persona-purple: #0E0E18;
   --font-cyber: var(--font-orbitron), sans-serif;
   --font-zh: var(--font-noto-sc), system-ui, sans-serif;
   --font-mono-cyber: var(--font-share-tech), monospace;
@@ -19,7 +26,7 @@
 }
 
 body {
-  background-color: #000000;
+  background-color: #050508;
   color: #ffffff;
   overflow-x: hidden;
   font-family: var(--font-noto-sc), system-ui, sans-serif;
@@ -79,19 +86,16 @@ body {
 
 /* Electric current hover animation */
 @keyframes electric-glow {
-  0%   { box-shadow: 0 0 6px #0AEFFF, 0 0 14px #0AEFFF, 0 0 2px #fff; }
-  15%  { box-shadow: 0 0 10px #FF2D78, 0 0 20px #FF2D78, 0 0 4px #fff; }
-  30%  { box-shadow: 0 0 4px #0AEFFF, 0 0 22px #0AEFFF, 0 0 6px #fff; }
-  45%  { box-shadow: 0 0 12px #FF2D78, 0 0 18px #FF2D78; }
-  60%  { box-shadow: 0 0 8px #0AEFFF, 0 0 16px #0AEFFF, 0 0 3px #fff; }
-  75%  { box-shadow: 0 0 6px #FF2D78, 0 0 24px #FF2D78, 0 0 2px #fff; }
-  90%  { box-shadow: 0 0 10px #0AEFFF, 0 0 12px #0AEFFF; }
-  100% { box-shadow: 0 0 6px #0AEFFF, 0 0 14px #0AEFFF, 0 0 2px #fff; }
+  0%   { box-shadow: 0 0 6px #00F0C8, 0 0 14px #00F0C8, 0 0 2px #fff; }
+  25%  { box-shadow: 0 0 8px #9D73F8, 0 0 18px #9D73F8; }
+  50%  { box-shadow: 0 0 10px #00F0C8, 0 0 22px #00F0C8, 0 0 4px #fff; }
+  75%  { box-shadow: 0 0 6px #9D73F8, 0 0 16px #9D73F8, 0 0 2px #fff; }
+  100% { box-shadow: 0 0 6px #00F0C8, 0 0 14px #00F0C8, 0 0 2px #fff; }
 }
 
 @keyframes electric-text-glow {
-  0%, 100% { text-shadow: 0 0 6px #0AEFFF, 0 0 12px #0AEFFF; }
-  50%       { text-shadow: 0 0 8px #FF2D78, 0 0 16px #FF2D78, 0 0 2px #fff; }
+  0%, 100% { text-shadow: 0 0 6px #00F0C8, 0 0 12px #00F0C8; }
+  50%       { text-shadow: 0 0 8px #9D73F8, 0 0 16px #9D73F8; }
 }
 
 .cyber-electric:hover {

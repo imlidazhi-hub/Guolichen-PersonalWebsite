@@ -88,7 +88,7 @@ export default function Navigation({ currentLocale }: NavigationProps) {
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 bg-persona-dark/95 backdrop-blur-md"
-      style={{ borderBottom: '1px solid rgba(107,33,168,0.4)', boxShadow: '0 0 20px rgba(10,239,255,0.06), 0 1px 0 rgba(255,45,120,0.25)' }}
+      style={{ borderBottom: '1px solid rgba(0,240,200,0.12)', boxShadow: '0 0 24px rgba(0,240,200,0.04), 0 1px 0 rgba(0,240,200,0.15)' }}
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
         {/* Logo / Brand */}

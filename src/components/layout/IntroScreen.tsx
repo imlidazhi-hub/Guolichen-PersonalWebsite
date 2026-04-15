@@ -170,7 +170,7 @@ export default function IntroScreen() {
           {/* Horizontal rule */}
           <motion.div
             className="w-64 md:w-96 h-px"
-            style={{ background: 'linear-gradient(90deg, transparent, #FF2D78, #FFD900, #0AEFFF, transparent)' }}
+            style={{ background: 'linear-gradient(90deg, transparent, #9D73F8, #E8B84B, #00F0C8, transparent)' }}
             initial={{ scaleX: 0, opacity: 0 }}
             animate={exiting ? { scaleX: 0, opacity: 0 } : { scaleX: 1, opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.7 }}

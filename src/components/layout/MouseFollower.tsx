@@ -69,7 +69,7 @@ export default function MouseFollower() {
           marginLeft: -160,
           marginTop: -160,
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(0,206,209,0.07) 0%, rgba(255,45,120,0.03) 50%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(0,240,200,0.07) 0%, rgba(157,115,248,0.03) 50%, transparent 70%)',
           opacity: visible ? 1 : 0,
           transition: 'opacity 0.3s',
           willChange: 'transform',
@@ -86,8 +86,8 @@ export default function MouseFollower() {
           marginLeft: -12,
           marginTop: -12,
           borderRadius: '50%',
-          border: '1.5px solid rgba(0,206,209,0.8)',
-          boxShadow: '0 0 6px rgba(0,206,209,0.6), inset 0 0 4px rgba(0,206,209,0.2)',
+          border: '1.5px solid rgba(0,240,200,0.75)',
+          boxShadow: '0 0 8px rgba(0,240,200,0.5), inset 0 0 4px rgba(0,240,200,0.15)',
           opacity: visible ? 1 : 0,
           transition: 'opacity 0.3s',
           willChange: 'transform',
@@ -104,8 +104,8 @@ export default function MouseFollower() {
             marginLeft: -2,
             marginTop: -2,
             borderRadius: '50%',
-            background: '#FF2D78',
-            boxShadow: '0 0 6px #FF2D78',
+            background: '#E8B84B',
+            boxShadow: '0 0 6px rgba(232,184,75,0.8)',
           }}
         />
       </div>
